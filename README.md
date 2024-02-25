@@ -1,3 +1,2 @@
 # SQL-project
 
-zkouška
