@@ -20,6 +20,13 @@ AD 5) Ano, myslím si, že růst cen potravin a mezd "kopíruje" meziroční vý
 Nejprve jsem si vytvořila primární tabulku, a to tak, aby zahrnovala všechna data, která budu nadále potřebovat k zodpovězení výzkumných otázek. Toho jsem dosáhla tak, že jsem si z dostupných tabulek vybrala ty, které tyto data zahrnují, spojila je na základě stejného sloupce pro rok (u tabulky czechia_price bylo potřeba nejprve extrahovat rok ze sloupce obsahujícího datum) a k tomu připojila i "vysvětlující" sloupce z dvou dalších tabulek, aby bylo vidět, co za odvětví a kategorii potravin se skrývá pod dostupnými kódy. Data jsem ještě omezila (klauzulí WHERE) tak, abych z tabulky pro mzdy dostala pouze data pro prům.hrubou mzdu (a ne prům.počet zaměstnaných osob), tedy hodnoty v Kč (ne tis.osob), a zajímal mě přepočtený (nikoliv fyzický) stav, který by měl dávat reálnější výsledky. 
 Pro vytvoření sekundární tabulky bylo potřeba spojit tabulky countries a economies, což se mi podařilo na základě společného sloupce pro "country" a zajímaly mě pouze evropské země  pouze za stejné (srovnatelné) období, jako předchozí data pro ČR, takže jsem si data této sekundární tabulky ještě zúžila klauzulí WHERE.
 
+## VYTVOŘENÍ SADY SQL K ZODPOVĚZENÍ OTÁZEK
+AD 1) Pro zodpovězení otázky bylo potřeba zjistit průměrnou mzdu v jednotlivých letech pro jednotlivá odvětví a vytvořit dodatečný sloupec (pomocí CASE), který bude na základě vypočtených průměrů informovat o nárůstu/poklesu mezd v porovnání s předešlým rokem.
+AD 2) Zde jsem postupovala tak, že jsem si zjistila průměrné mzdy a průměrné ceny pro jednotlivé kategorie potravin (mléko a chléb) v prvním (MIN) a posledním (MAX) srovnatelném období a tyto dvě čísla mezi sebou vydělila (mzdy/ceny), abych zjistila, jaké množství těchto potravin bylo možné za danou mzdu pořídit.
+Ad 3) Abych zjistila, která potravina zdražuje nejpomaleji, musela jsem zjistit průměrné ceny daných kategorií v jednotlivých letech a jejich procentuální růst/pokles. Výsledky jsem seřadila, abych na prvním řádku měla nejnižší nárůst (potravinu, která roste nejpomaleji).
+Ad 4) Zde bylo potřeba využít průměrné ceny potravin a průměrné mzdy (seskupené pro jednotlivé roky), abych následně mohla z těchto údajů zjistit meziroční rozdíl a následně vybrat pomocí klauzule WHERE takový rok, kde průměrný rozdíl v cenách potravin byl alespoň o 10% vyšší, než rozdíl pro průměrné mzdy.
+Ad 5) K vypozorování vztahu mezi mírou růstu/poklesu HDP a mezd/potravin jsem opět pracovala s průměrnými hodnotami sledovaných údajů a jejich meziročním rozdílem.
+
 # VÝSLEDKY
 
 AD 1) Mzdy ve všech odvětvích skutečně meziročně spíše rostou (ačkoliv se najdou roky, kdy docházelo k poklesu)
