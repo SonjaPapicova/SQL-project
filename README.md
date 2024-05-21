@@ -8,11 +8,12 @@
 
 # HYPOTÉZY
 
-AD 1) Mzdy ve všech odvětvích v průběhu let rostou.
-AD 2) Průměrná mzda roste rychleji, než cena základních potravin, jako jsou chléb a mléko, je tedy možné v posledním srovnatelném období (2018) koupit větší množství těchto potravin, než dříve (2006).
-AD 3) Nejpomaleji zdražuje mouka.
-AD 4) Ano, existuje.
-AD 5) Ano, myslím si, že růst cen potravin a mezd "kopíruje" meziroční vývoj HDP.
+•	AD 1) Mzdy ve všech odvětvích v průběhu let rostou.
+•	AD 2) Průměrná mzda roste rychleji, než cena základních potravin, jako jsou chléb a mléko, je tedy možné v posledním srovnatelném období (2018) koupit větší množství těchto potravin, než dříve (2006).
+•	AD 3) Nejpomaleji zdražuje mouka.
+•	AD 4) Ano, existuje.
+•	AD 5) Ano, myslím si, že růst cen potravin a mezd "kopíruje" meziroční vývoj HDP.
+
 
 # POSTUP
 
